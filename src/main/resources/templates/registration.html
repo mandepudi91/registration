@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Registration</title>
+</head>
+<body>
+<div><p><a href="/redirect">Add Employee</a></p></div>
+<div>
+    <table>
+        <tr>
+            <th>FirstName&nbsp;&nbsp;&nbsp;</th>
+            <th>LastName&nbsp;&nbsp;&nbsp;</th>
+            <th>Email&nbsp;&nbsp;&nbsp;</th>
+        </tr>
+        <tr>
+<tr th:each="employee : ${employees}">
+        <td th:text="${employee.firsName}" />
+        <td th:text="${employee.lastName}" />
+        <td th:text="${employee.email}" />
+        <td><a th:href="@{/edit/{id}(id=${employee.id})}">edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${employee.id})}">delete</a></td>
+    </td>
+</tr>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
